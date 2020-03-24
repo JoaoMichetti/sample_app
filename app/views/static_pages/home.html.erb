@@ -1,7 +1,12 @@
 <% provide(:title, "Home") %>
+  <div class="center jumbotrom">
     <h1>Home</h1>
-    <p>
+    <h2>
       This is the home page for
       <a href="https://www.railstutorial.org/">Ruby on Rail Turorial</a>
       sample application
-    </p>
+    </h2>
+    <%= link_to "Sinf up now!", '#', class: "btn btn-lg btn-primary"%>
+  </div>
+  <%= link_to image_tag("rails.svg", alt: "Rails logo", width: "200"),
+                        "https://rubyonrails.org/"%>
