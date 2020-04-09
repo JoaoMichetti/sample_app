@@ -66,7 +66,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     log_in_as(@other_user)
     assert_no_difference 'User.count' do
       delete user_path(@user)
-    end
+   end
     assert_redirected_to root_url
   end
 end
