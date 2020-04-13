@@ -5,6 +5,7 @@ before_action :admin_user,     only: :destroy
 
   def show
     @user = User.find(params[:id])
+    redirect_to(root_url) unless @user.activated?
   end
 
   def new
@@ -15,7 +16,7 @@ before_action :admin_user,     only: :destroy
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
-      flash[:info] = "Please #{@user.name}, check your email to activate your account."
+      flash[:info] = "Please check your email to activate your account."
       redirect_to root_url
     else
       render 'new'
@@ -27,7 +28,7 @@ before_action :admin_user,     only: :destroy
   end
 
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.where(activated: true ).paginate(page: params[:page])
   end
 
   def update
