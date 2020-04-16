@@ -6,6 +6,7 @@ before_action :admin_user,     only: :destroy
   def show
     @user = User.find(params[:id])
     redirect_to(root_url) unless @user.activated?
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def new
