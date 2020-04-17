@@ -69,13 +69,24 @@ Rails.application.configure do
   host = 'https://stark-inlet-91738.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    :address           => 'smtp.sendgrid.net',
+    :address           => 'smtp.gmail.com',
     :port              => '587',
     :authentication    => :plain,
-    :user_name         => ENV['SENDGRID_USERNAME'],
-    :password          => ENV['SENDGRID_PASSWORD'],
+    :user_name         => ENV['GMAIL_USERNAME'],
+    :password          => ENV['GMAIL_PASSWORD'],
     :domain            => 'heroku.com',
     :enable_starttls_auto  => true
+  }
+
+  #sendgrid settings
+  #ActionMailer::Base.smtp_settings = {
+  #  :address           => 'smtp.sendgrid.com',
+  #  :port              => '587',
+  #  :authentication    => :plain,
+  #  :user_name         => ENV['SENDGRID_USERNAME'],
+  #  :password          => ENV['SENDGRID_PASSWORD'],
+  #  :domain            => 'heroku.com',
+  #  :enable_starttls_auto  => true
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
