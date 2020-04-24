@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/cavi21/letter_opener.git
+  revision: 3be81cb10e4c71f79278db22aa5e10aca64418f0
+  specs:
+    letter_opener (1.0.0)
+      launchy (>= 2.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -132,6 +139,8 @@ GEM
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
     jmespath (1.4.0)
+    launchy (2.5.0)
+      addressable (~> 2.7)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -288,6 +297,7 @@ DEPENDENCIES
   guard-minitest (= 2.4.6)
   image_processing (= 1.9.3)
   jbuilder (= 2.9.1)
+  letter_opener!
   listen (= 3.1.5)
   mini_magick (= 4.9.5)
   minitest (= 5.11.3)
