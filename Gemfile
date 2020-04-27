@@ -2,7 +2,10 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'pg' , '1.1.4'
+gem 'image_processing', '1.9.3'
+gem 'mini_magick','4.9.5'
 gem 'rails', '6.0.2.1'
+gem 'active_storage_validations', '0.8.2'
 gem 'bcrypt', '3.1.13'
 gem 'faker', '2.1.2'
 gem 'will_paginate', '3.1.8'
@@ -26,6 +29,7 @@ group :development do
   gem 'listen', '3.1.5'
   gem 'spring', '2.1.0'
   gem 'spring-watcher-listen', '2.0.1'
+  gem "letter_opener", :git => 'git://github.com/cavi21/letter_opener.git'
 end
 
 group :test do
@@ -39,6 +43,9 @@ group :test do
   gem 'guard-minitest' , '2.4.6'
 end
 
+group :production do
+  gem 'aws-sdk-s3', '1.46.0', require: false
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
