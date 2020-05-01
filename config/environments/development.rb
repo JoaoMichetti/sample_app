@@ -57,8 +57,13 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  config.action_mailer.delivery_method = :letter_opener
-  config.action_mailer.perform_deliveries = true
   host = 'localhost:3000' #local server
   config.action_mailer.default_url_options = { host: host, protocol: 'http'}
+  # To overrider the location for message storage.
+# Default value is `tmp/letter_opener`
+  config.location = Rails.root.join('tmp', 'my_mails')
+
+# To render only the message body, without any metadata or extra containers or styling.
+# Default value is `:default` that renders styled message with showing useful metadata.
+  config.message_template = :light
 end
