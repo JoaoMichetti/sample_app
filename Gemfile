@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'pg' , '1.1.4'
-gem 'image_processing', '1.9.3'
+gem 'image_processing', '1.12.2'
 gem 'mini_magick','4.9.5'
 gem 'rails', '6.0.2.1'
 gem 'active_storage_validations', '0.8.2'
